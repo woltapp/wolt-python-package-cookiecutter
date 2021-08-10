@@ -2,9 +2,8 @@
     "author_name": "Your name",
     "author_email": "Your email address (eq. you@example.com)",
     "github_username": "",
-    "project_name": "Name of the project (will be shown as the title in the readme)",
+    "project_name": "Name of the project (will be shown e.g. as the title in the readme)",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-    "repository_name": "{{ cookiecutter.project_slug }}",
     "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
     "project_short_description": "A short description of the project"
 }
