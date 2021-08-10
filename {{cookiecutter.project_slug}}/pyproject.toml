@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "{{ cookiecutter.project_slug }}"
-version = "{{ cookiecutter.version }}"
+version = 0.0.1
 description = "{{ cookiecutter.project_short_description }}"
 authors = [
     "{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>",
@@ -27,7 +27,9 @@ classifiers = [
   "Typing :: Typed",
 ]
 
-packages = [{ include = '{{ cookiecutter.package_name }}', from = 'src' }]
+packages = [
+    { include = "{{ cookiecutter.package_name }}", from = "src" }
+]
 
 [tool.poetry.dependencies]
 python = ">=3.6.1, <4.0"
