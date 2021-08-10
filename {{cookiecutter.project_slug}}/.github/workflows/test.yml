@@ -3,7 +3,6 @@ name: test
 on:
   pull_request:
   push:
-
 {% raw %}
 jobs:
   pre-commit:
