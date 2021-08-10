@@ -1,7 +1,7 @@
 {
-    "full_name": "Your name",
-    "email": "Your address email (eq. you@example.com)",
-    "project_name": "Name of the project",
+    "author_name": "Your name",
+    "author_email": "Your email address (eq. you@example.com)",
+    "project_name": "Name of the project (will be shown as the title in the readme)",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "repository_name": "{{ cookiecutter.project_slug }}",
     "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
