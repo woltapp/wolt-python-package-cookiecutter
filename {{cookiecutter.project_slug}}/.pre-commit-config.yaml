@@ -33,7 +33,7 @@ repos:
         types: [python]
       - id: mypy
         name: mypy
-        entry: poetry run mypy
+        entry: poetry run mypy .
         require_serial: true
         language: system
         types: [python]
