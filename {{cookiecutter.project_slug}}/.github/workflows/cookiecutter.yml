@@ -39,13 +39,15 @@ jobs:
 
       # behaviour if PR already exists: https://github.com/marketplace/actions/create-pull-request#action-behaviour
       - name: Create Pull Request
-        if: steps.changes.outputs.changed == 1
+        env:
+          GITHUP_TOKEN: ${{ secrets.CLEAN_MVN_REPO }}
+        if: steps.changes.outputs.changed == 1 && GITHUB_TOKEN != null
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.AUTO_UPDATE_GITHUB_TOKEN }}
+          token: ${{ env.GITHUB_TOKEN }}
           commit-message: >-
             chore: update project structure to ${{ env.TEMPLATE_COMMIT }}
           title: "[Actions] Auto-Sync cookiecutter template"
-          body: ""
+          body: ""  # TODO: insert changelog
           branch: chore/cookiecutter-pypackage
           delete-branch: true{% endraw %}
