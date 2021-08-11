@@ -1,4 +1,4 @@
-name: Update project structure
+name: Autoupdate project structure
 on:
   schedule:
     - cron: "0 0 * * *"  # at the end of every day
