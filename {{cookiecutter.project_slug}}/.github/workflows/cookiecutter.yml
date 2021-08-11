@@ -40,8 +40,8 @@ jobs:
       # behaviour if PR already exists: https://github.com/marketplace/actions/create-pull-request#action-behaviour
       - name: Create Pull Request
         env:
-          GITHUP_TOKEN: ${{ secrets.CLEAN_MVN_REPO }}
-        if: steps.changes.outputs.changed == 1 && GITHUB_TOKEN != null
+          GITHUP_TOKEN: ${{ secrets.AUTO_UPDATE_GITHUB_TOKEN }}
+        if: steps.changes.outputs.changed == 1 && GITHUB_TOKEN
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ env.GITHUB_TOKEN }}
