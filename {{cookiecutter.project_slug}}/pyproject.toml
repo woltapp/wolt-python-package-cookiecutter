@@ -47,6 +47,10 @@ pytest-cov = "^2.12.1"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.isort]
+profile = "black"
+src_paths = ["src", "tests"]
+
 [tool.black]
 target-version = ["py37"]
 include = '\.pyi?$'
