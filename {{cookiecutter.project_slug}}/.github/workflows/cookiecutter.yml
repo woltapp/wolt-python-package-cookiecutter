@@ -1,0 +1,51 @@
+name: Update project structure
+on:
+  schedule:
+    - cron: "0 0 * * *"  # at the end of every day
+{% raw %}
+jobs:
+  autoUpdateProject:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.5
+
+      - name: Install dependencies
+        run: pip install cruft poetry jello
+
+      - name: Update project structure
+        run: |
+          cruft update -y
+
+      - name: Check if there are changes
+        id: changes
+        uses: UnicornGlobal/has-changes-action@v1.0.11
+
+      - name: apply additional changes and fixes
+        if: steps.changes.outputs.changed == 1
+        run: |
+          poetry lock --no-update  # add new dependencies
+          poetry install
+          poetry run pre-commit run -a || true  # we have to fix other issue manually
+
+      - name: Get new template version
+        if: steps.changes.outputs.changed == 1
+        # extract new cooiecutter template version
+        run: |
+          echo "TEMPLATE_COMMIT=$(cat .cruft.json | jello -r "_['commit'][:8]")" >> $GITHUB_ENV
+
+      # behaviour if PR already exists: https://github.com/marketplace/actions/create-pull-request#action-behaviour
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 1
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.AUTO_UPDATE_GITHUB_TOKEN }}
+          commit-message: >-
+            chore: update project structure to ${{ env.TEMPLATE_COMMIT }}
+          title: "[Actions] Auto-Sync cookiecutter template"
+          body: ""
+          branch: chore/cookiecutter-pypackage
+          delete-branch: true{% endraw %}

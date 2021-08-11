@@ -43,6 +43,17 @@ We update this cookiecutter template regularly to keep it up-to-date with the be
 cruft update
 ```
 
+## Autoupdate template
+
+This cookiecutter template comes with an auto update feature if the project was created using cruft.
+A GitHub action automatically checks for updates and creates a pull request.
+
+It is required to add a [personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) as github secret to the repository (named `AUTO_UPDATE_GITHUB_TOKEN`).
+When creating the access token, the following permissions have to be granted
+
+* repo
+* workflow
+
 ## TODOs
 
 * CI will require setting some secrets (e.g. PyPI token)
