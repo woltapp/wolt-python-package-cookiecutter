@@ -1,10 +1,10 @@
 name: Autoupdate dependencies
 on:
   schedule:
-    - cron: "0 0 * * *"  # TODO change to every month
+    - cron: "0 0 1 * *"
 {% raw %}
 jobs:
-  autoUpdateProject:
+  autoUpdateDependencies:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,19 +16,21 @@ jobs:
       - name: Install dependencies
         run: pip install poetry
 
+      - name: Setup project
+        run: poetry install
+
       - name: Gather outdated dependencies
         run: |
-          echo "OUTDATED_DEPENDENCIES=$(poetry show -o)" >> $GITHUB_ENV
-
-      - name: Update dependencies
-        if: OUTDATED_DEPENDENCIES
-        run: poetry lock
+          echo 'OUTDATED_DEPENDENCIES<<EOF' >> $GITHUB_ENV
+          poetry show -o >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+          echo ${{ env.OUTDATED_DEPENDENCIES }}
 
       # behaviour if PR already exists: https://github.com/marketplace/actions/create-pull-request#action-behaviour
       - name: Create Pull Request
         env:
-          GITHUP_TOKEN: ${{ secrets.AUTO_UPDATE_GITHUB_TOKEN }}
-        if: OUTDATED_DEPENDENCIES && GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.AUTO_UPDATE_GITHUB_TOKEN }}
+        if: ${{ env.OUTDATED_DEPENDENCIES != 0 && env.GITHUB_TOKEN != 0 }}
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ env.GITHUB_TOKEN }}
