@@ -1,6 +1,7 @@
 [tool.poetry]
 name = "{{ cookiecutter.project_slug }}"
-version = "0.0.1"
+# Version comes from git tag with help of poetry-dynamic-versioning
+version = "0.0.0"
 description = "{{ cookiecutter.project_short_description }}"
 authors = [
     "{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>",
@@ -50,7 +51,7 @@ pytest = "*"
 pytest-cov = "*"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
