@@ -43,6 +43,26 @@ We update this cookiecutter template regularly to keep it up-to-date with the be
 cruft update
 ```
 
+### Configure secrets
+`PYPI_TOKEN`
+
+Required for publishing the package to [PyPI](https://pypi.org/). You can generate a token by logging into PyPI and
+ navigating to _Add API token_ in your [account settings](https://pypi.org/manage/account/).
+
+
+`AUTO_UPDATE_GITHUB_TOKEN`
+
+This cookiecutter template comes with an auto update feature if the project was created using cruft.
+A GitHub action automatically checks for updates and creates a pull request.
+
+Generate [personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github
+/creating-a-personal-access-token) and use it as the value for `AUTO_UPDATE_GITHUB_TOKEN` secret. When creating the
+ access token, the following permissions have to be granted
+
+* repo
+* workflow
+
+
 ## Autoupdate template
 
 This cookiecutter template comes with an auto update feature if the project was created using cruft.
@@ -53,7 +73,3 @@ When creating the access token, the following permissions have to be granted
 
 * repo
 * workflow
-
-## TODOs
-
-* CI will require setting some secrets (e.g. PyPI token)
