@@ -1,0 +1,21 @@
+name: Publish package to PyPI
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: pip install poetry poetry-dynamic-versioning
+      - name: Publish to pypi
+        run: |
+          poetry-dynamic-versioning
+          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+          poetry publish --build --no-interaction
