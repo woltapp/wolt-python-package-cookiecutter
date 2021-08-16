@@ -17,6 +17,8 @@ and whistles included.
 * Automatically published as [GitHub Pages](https://pages.github.com/)
 * Powered by [mkdocs-material](https://github.com/squidfunk/mkdocs-material)
 * Auto-generated API documentation from docstrings via [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings)
+* See the extensive list of [MkDocs plugins](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins) which can help you
+ to tune the documentation to fit your project's needs
 
 **Automated releases**
 * Publishing to [PyPI](https://pypi.org/) when a release is made in GitHub
