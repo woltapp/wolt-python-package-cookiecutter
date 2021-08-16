@@ -1,0 +1,14 @@
+site_name: {{ cookiecutter.project_name }}
+
+theme:
+  name: material
+
+plugins:
+- mkdocstrings:
+    default_handler: python
+    handlers:
+      python:
+        rendering:
+          show_source: true
+    watch:
+      - src/{{ cookiecutter.package_name }}
