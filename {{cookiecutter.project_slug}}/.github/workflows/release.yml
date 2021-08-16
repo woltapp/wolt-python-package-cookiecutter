@@ -13,9 +13,13 @@ jobs:
         with:
           python-version: 3.9
       - name: Install dependencies
-        run: pip install poetry poetry-dynamic-versioning
+        run: |
+          pip install poetry poetry-dynamic-versioning
+          poetry install
       - name: Publish to pypi
         run: |
           poetry-dynamic-versioning
           poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
-          poetry publish --build --no-interaction{% endraw %}
+          poetry publish --build --no-interaction
+      - name: Deploy docs
+        run: poetry run mkdocs gh-deploy --force{% endraw %}
