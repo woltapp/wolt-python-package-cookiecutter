@@ -3,6 +3,10 @@ site_name: {{ cookiecutter.project_name }}
 theme:
   name: material
 
+nav:
+  - Introduction: 'index.md'
+  - api_docs.md
+
 plugins:
 - mkdocstrings:
     default_handler: python
