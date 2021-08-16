@@ -90,13 +90,6 @@ Generate [personal access token](https://docs.github.com/en/free-pro-team@latest
 * workflow
 
 
-## Autoupdate template
-
-This cookiecutter template comes with an auto update feature if the project was created using cruft.
-A GitHub action automatically checks for updates and creates a pull request.
-
-It is required to add a [personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) as github secret to the repository (named `AUTO_UPDATE_GITHUB_TOKEN`).
-When creating the access token, the following permissions have to be granted
-
-* repo
-* workflow
+### After the first release
+The first release will create `gh-pages` branch which will contain the static files for the documentation. Enable GitHub
+ Pages in the _Pages_ section of the repository settings.
