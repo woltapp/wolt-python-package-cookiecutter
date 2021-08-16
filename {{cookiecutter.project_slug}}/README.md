@@ -52,8 +52,8 @@ The documentation is automatically generated from the content of the [docs direc
 ### Releasing
 A PyPI release and documentation update is initiated by creating a [release in GitHub](https://docs.github.com/en/github/administering-a-repository/releasing-projects-on-github/about-releases).
 
-The project uses [semantic versioning](https://semver.org/). Use `v` in front of the major version number, e.g. `v.2
-.1.3`
+The project uses [semantic versioning](https://semver.org/). Use `v` in front of the major version number, for
+ example: `v.2.1.3`.
 
 
 ### Pre-commit
