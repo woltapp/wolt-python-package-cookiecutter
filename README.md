@@ -11,6 +11,8 @@ Features:
 * Proper configs for linters
 * src project structure (makes sure the tests are ran against installed package)
 * Testing against multiple Python versions
+* Documentation via [mkdocs-material](https://github.com/squidfunk/mkdocs-material) (Auto-generated API documentation
+ via [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings))
 
 ## Usage
 
