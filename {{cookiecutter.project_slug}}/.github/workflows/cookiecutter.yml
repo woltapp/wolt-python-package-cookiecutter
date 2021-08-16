@@ -53,7 +53,7 @@ jobs:
           token: ${{ env.GITHUB_TOKEN }}
           commit-message: >-
             chore: update project structure to ${{ env.TEMPLATE_COMMIT }}
-          title: "[Actions] Auto-Sync cookiecutter template"
+          title: "[Actions] Auto-Update cookiecutter template"
           body: ""  # TODO: insert changelog
           branch: chore/cookiecutter-pypackage
           delete-branch: true{% endraw %}
