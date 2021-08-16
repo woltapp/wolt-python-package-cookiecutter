@@ -1,18 +1,41 @@
 # Wolt Python Package Cookiecutter
 
-Cookiecutter for rapidly developing new open source Python packages.
+Cookiecutter for rapidly developing new open source Python packages. Best practices with all the modern bells
+and whistles included.
 
-Features:
+## Features:
 
-* CI (GHA)
-* Publishing to PyPI on GitHub releases (GHA)
-* Poetry
-* Pre-commit with all the good stuff
-* Proper configs for linters
-* src project structure (makes sure the tests are ran against installed package)
-* Testing against multiple Python versions
-* Documentation via [mkdocs-material](https://github.com/squidfunk/mkdocs-material) (Auto-generated API documentation
- via [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings))
+**Automatic updates to the projects generated from this cookiecutter**
+* Powered by [cruft](https://cruft.github.io/cruft/)
+* Keep your project up-to-date with best practices
+
+**Continuous integration**
+* Powered by [Github Actions](https://github.com/features/actions)
+* Testing against multiple different versions
+
+**Documentation**
+* Automatically published as [GitHub Pages](https://pages.github.com/)
+* Powered by [mkdocs-material](https://github.com/squidfunk/mkdocs-material)
+* Auto-generated API documentation from docstrings via [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings)
+
+**Automated releases**
+* Publishing to [PyPI](https://pypi.org/) when a release is made in GitHub
+
+**Changelog management**
+* TODO
+
+**Bells and whistles**
+* [Poetry](https://python-poetry.org/docs/) for managing dependencies and packaging
+* [pre-commit](https://pre-commit.com/) for running all the goodies listed below
+* [mypy](https://flake8.pycqa.org/en/latest/) for static type checking
+* [flake8](https://flake8.pycqa.org/en/latest/) (with multiple plugins) for linting (e.g. style and complexity checks)
+* [black](https://black.readthedocs.io/en/stable/) for auto-formatting the code
+* [isort](https://pycqa.github.io/isort/) for auto-sorting imports
+* [autoflake](https://github.com/myint/autoflake) for auto-removing unused imports
+
+**Automation**
+* Updates to the best practices (via GHA workflow which runs `cruft update` and creates a PR)
+* Dependency updates (via GHA workflow which creates a PR)
 
 ## Usage
 
