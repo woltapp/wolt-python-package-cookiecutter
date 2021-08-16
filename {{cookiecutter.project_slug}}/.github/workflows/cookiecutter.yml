@@ -35,7 +35,7 @@ jobs:
         run: |
           poetry lock --no-update  # add new dependencies
           poetry install
-          poetry run pre-commit run -a || true  # we have to fix other issue manually
+          poetry run pre-commit run -a || true  # we have to fix other issues manually
 
       - name: Get new template version
         if: steps.changes.outputs.changed == 1
