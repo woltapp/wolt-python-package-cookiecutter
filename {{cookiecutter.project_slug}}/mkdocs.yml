@@ -7,6 +7,10 @@ nav:
   - Introduction: 'index.md'
   - api_docs.md
 
+markdown_extensions:
+  - pymdownx.snippets:
+      check_paths: true
+
 plugins:
   - search:
   - mkdocstrings:
