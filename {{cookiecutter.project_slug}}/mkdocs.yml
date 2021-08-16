@@ -8,11 +8,12 @@ nav:
   - api_docs.md
 
 plugins:
-- mkdocstrings:
-    default_handler: python
-    handlers:
-      python:
-        rendering:
-          show_source: true
-    watch:
-      - src/{{ cookiecutter.package_name }}
+  - search:
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: true
+      watch:
+        - src/{{ cookiecutter.package_name }}
