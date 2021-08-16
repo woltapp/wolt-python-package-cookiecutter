@@ -11,6 +11,9 @@
 **Source Code**: [https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}](https
 ://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }})
 
+**PyPI**: [https://pypi.org/project/{{ cookiecutter.project_slug }}/](https://pypi.org/project/{{ cookiecutter
+.project_slug }}/)
+
 ---
 
 {{ cookiecutter.project_short_description }}
