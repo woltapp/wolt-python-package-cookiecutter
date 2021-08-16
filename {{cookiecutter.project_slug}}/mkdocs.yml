@@ -3,6 +3,15 @@ repo_url: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.
 
 theme:
   name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
 
 nav:
   - Introduction: 'index.md'
