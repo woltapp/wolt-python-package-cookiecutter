@@ -2,6 +2,16 @@
 ![PyPI](https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}?style=flat-square)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_slug}}?style=flat-square)
 ![PyPI - License](https://img.shields.io/pypi/l/{{ cookiecutter.project_slug }}?style=flat-square)
+---
+
+**Documentation**: [https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug
+ }}](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug
+ }})
+
+**Source Code**: [https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}](https
+://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }})
+
+---
 
 {{ cookiecutter.project_short_description }}
 
