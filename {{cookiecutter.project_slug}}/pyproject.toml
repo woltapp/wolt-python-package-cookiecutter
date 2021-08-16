@@ -49,6 +49,7 @@ mkdocs-material = "*"
 mypy = "*"
 pep8-naming = "*"
 pre-commit = "*"
+pymdown-extensions = "*"
 pytest = "*"
 pytest-cov = "*"
 
