@@ -1,3 +1,3 @@
 # API documentation
 
-:::just_a_test_project
+:::{{ cookiecutter.package_name }}
