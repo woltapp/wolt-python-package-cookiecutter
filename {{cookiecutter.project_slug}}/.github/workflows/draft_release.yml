@@ -1,0 +1,49 @@
+name: Draft a release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+{% raw %}
+jobs:
+  update-changelog-and-create-draft-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Parse version info
+        id: version_info
+        run: |
+          echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+          echo ::set-output name=version::${GITHUB_REF#refs/*/v}
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          pip install poetry
+          poetry install
+      - name: Update changelog
+        id: changelog
+        run: |
+          poetry run kacl-cli --config .github/.kacl.yml release ${{ steps.version_info.outputs.version }} --modify --auto-link
+          echo "" >> CHANGELOG.md
+          body=$(poetry run kacl-cli get ${{ steps.version_info.outputs.version }})
+          body="${body//'%'/'%25'}"
+          body="${body//$'\n'/'%0A'}"
+          body="${body//$'\r'/'%0D'}"
+          echo ::set-output name=body::$body
+      - name: Commit changelog changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: 'CHANGELOG.md'
+          branch: 'master'
+      - name: Create a draft release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.version_info.outputs.tag }}
+          release_name: Release ${{ steps.version_info.outputs.version }}
+          body: ${{ steps.changelog.outputs.body }}
+          draft: true{% endraw %}
