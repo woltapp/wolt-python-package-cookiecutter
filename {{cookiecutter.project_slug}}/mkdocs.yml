@@ -16,6 +16,7 @@ theme:
 nav:
   - Introduction: 'index.md'
   - api_docs.md
+  - changelog.md
 
 markdown_extensions:
   - pymdownx.snippets:
