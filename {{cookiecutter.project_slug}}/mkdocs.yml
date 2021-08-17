@@ -28,6 +28,7 @@ plugins:
       handlers:
         python:
           rendering:
+            show_signature_annotations: true
             show_source: true
       watch:
         - src/{{ cookiecutter.package_name }}
