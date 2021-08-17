@@ -62,7 +62,7 @@ profile = "black"
 src_paths = ["src", "tests"]
 
 [tool.black]
-target-version = ["py37"]
+target-version = ["py39"]
 include = '\.pyi?$'
 
 [tool.pytest.ini_options]
