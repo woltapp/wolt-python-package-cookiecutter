@@ -24,7 +24,10 @@ and whistles included.
 * Publishing to [PyPI](https://pypi.org/) when a release is made in GitHub
 
 **Changelog management**
-* TODO
+* Gently enforced: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+* GitHub releases get their description automatically populated based on the changelog content
+* The _Unreleased_ section is automatically updated when a release is done
+* Changelog is embedded in the documentation
 
 **Bells and whistles**
 * [Poetry](https://python-poetry.org/docs/) for managing dependencies and packaging
