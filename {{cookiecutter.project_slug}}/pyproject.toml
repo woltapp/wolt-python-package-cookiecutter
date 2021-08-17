@@ -52,6 +52,7 @@ pre-commit = "*"
 pymdown-extensions = "*"
 pytest = "*"
 pytest-cov = "*"
+python-kacl = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
