@@ -25,18 +25,18 @@ pip install {{ cookiecutter.project_slug }}
 ```
 
 ## Development
-1. Clone this repository
-2. Create a virtual environment and install the dependencies
+* Clone this repository
+* Create a virtual environment and install the dependencies
 
-   ```sh
-   poetry install
-   ```
+```sh
+poetry install
+```
 
-3. Activate the virtual environment
+* Activate the virtual environment
 
-   ```sh
-   poetry shell
-   ```
+```sh
+poetry shell
+```
 
 ### Testing
 
