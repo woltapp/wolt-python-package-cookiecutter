@@ -82,9 +82,9 @@ Required for publishing the package to [PyPI](https://pypi.org/). You can genera
 This cookiecutter template comes with an auto update feature if the project was created using cruft.
 A GitHub action automatically checks for updates and creates a pull request.
 
-Generate [personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github
-/creating-a-personal-access-token) and use it as the value for `AUTO_UPDATE_GITHUB_TOKEN` secret. When creating the
- access token, the following permissions have to be granted
+Generate [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) 
+and use it as the value for `AUTO_UPDATE_GITHUB_TOKEN` secret. When creating the access token, the following
+ permissions have to be granted
 
 * repo
 * workflow
