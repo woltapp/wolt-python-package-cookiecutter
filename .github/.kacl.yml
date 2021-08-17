@@ -1,0 +1,5 @@
+kacl:
+  links:
+    compare_versions_template: '{host}/compare/v{previous_version}...v{version}'
+    unreleased_changes_template: '{host}/compare/v{latest_version}...master'
+    initial_version_template: '{host}/tree/v{version}'
