@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version in semantic version format, e.g. 1.2.3'
+        description: 'The version number (e.g. 1.2.3) OR one of: patch|minor|major|prepatch|preminor|premajor|prerelease'
         required: true
+        default: 'patch'
 {% raw %}
 jobs:
   draft-release:
