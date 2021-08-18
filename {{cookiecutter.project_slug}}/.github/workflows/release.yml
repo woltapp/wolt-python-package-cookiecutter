@@ -14,11 +14,10 @@ jobs:
           python-version: 3.9
       - name: Install dependencies
         run: |
-          pip install poetry poetry-dynamic-versioning
+          pip install poetry
           poetry install
       - name: Publish to pypi
         run: |
-          poetry-dynamic-versioning
           poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
           poetry publish --build --no-interaction
       - name: Deploy docs
