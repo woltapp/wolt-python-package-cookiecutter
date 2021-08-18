@@ -50,22 +50,13 @@ The documentation is automatically generated from the content of the [docs direc
  ](https://pages.github.com/) automatically as part each release.
 
 ### Releasing
-The project uses [semantic versioning](https://semver.org/). Use `v` in front of the major version number.
+Trigger the [Draft release workflow](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/actions/workflows/draft_release.yml)
+(press _Run workflow_). This will update the changelog & version and create a GitHub release which is in _Draft_ state.
 
-When you want to make a release, create and push a tag:
-
-```sh
-git tag v1.2.3
-git push origin v1.2.3
-```
-
-This triggers [draft_release](.github/workflows/draft_release.yml) workflow which updates the changelog
- and creates a draft release in GitHub. Find the draft release from the [GitHub releases](https://github.com
- /{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/releases) and publish it.
+Find the draft release from the [GitHub releases](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/releases) and publish it.
 
 When a release is published, it'll trigger [release](.github/workflows/release.yml) workflow which creates PyPI
  release and deploys updated documentation.
-
 
 ### Pre-commit
 
