@@ -24,7 +24,7 @@ jobs:
       - name: Update changelog
         id: changelog
         run: |
-          poetry run kacl-cli --config .github/.kacl.yml release ${{ github.event.inputs.version }} --modify --auto-link
+          poetry run kacl-cli release ${{ github.event.inputs.version }} --modify --auto-link
           echo "" >> CHANGELOG.md
           body=$(poetry run kacl-cli get ${{ github.event.inputs.version }})
           body="${body//'%'/'%25'}"
