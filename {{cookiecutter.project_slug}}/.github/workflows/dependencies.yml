@@ -20,23 +20,25 @@ jobs:
         run: poetry install
 
       - name: Gather outdated dependencies
+        id: get_outdated_dependencies
         run: |
-          echo 'OUTDATED_DEPENDENCIES<<EOF' >> $GITHUB_ENV
-          poetry show -o >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
-          echo ${{ env.OUTDATED_DEPENDENCIES }}
+          body=$(poetry show -o)
+          body="${body//'%'/'%25'}"
+          body="${body//$'\n'/'%0A'}"
+          body="${body//$'\r'/'%0D'}"
+          echo ::set-output name=body::$body
 
       # behaviour if PR already exists: https://github.com/marketplace/actions/create-pull-request#action-behaviour
       - name: Create Pull Request
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_UPDATE_GITHUB_TOKEN }}
-        if: ${{ env.OUTDATED_DEPENDENCIES != 0 && env.GITHUB_TOKEN != 0 }}
+        if: ${{ steps.get_outdated_dependencies.outputs.body != 0 && env.GITHUB_TOKEN != 0 }}
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ env.GITHUB_TOKEN }}
           commit-message: >-
             chore: update dependencies
           title: "[Actions] Auto-Update dependencies"
-          body: ${{ env.OUTDATED_DEPENDENCIES }}
+          body: ${{ steps.get_outdated_dependencies.outputs.body }}
           branch: chore/update-dependencies
           delete-branch: true{% endraw %}
