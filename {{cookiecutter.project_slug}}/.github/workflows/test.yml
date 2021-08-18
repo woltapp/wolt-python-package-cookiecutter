@@ -1,4 +1,4 @@
-name: test
+name: Test
 
 on:
   pull_request:
@@ -7,6 +7,14 @@ on:
       - "**"
 {% raw %}
 jobs:
+  lint-cruft:
+    name: Check if automatic project update was successful
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Fail if .rej files exist as structure update was not successful
+        run: test -z "$(find . -iname '*.rej')"
+
   pre-commit:
     runs-on: ubuntu-latest
     steps:

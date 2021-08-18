@@ -4,7 +4,7 @@ on:
     - cron: "0 0 1 * *"
 {% raw %}
 jobs:
-  autoUpdateDependencies:
+  auto-update-dependencies:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
