@@ -60,8 +60,9 @@ git push origin v1.2.3
 ```
 
 This triggers [draft_release](.github/workflows/draft_release.yml) workflow which updates the changelog
- and creates a draft release in GitHub. Find the draft release from the [GitHub releases](https://github.com
- /{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/releases) and publish it.
+ and creates a draft release in GitHub. Find the draft release from the
+ [GitHub releases](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/releases)
+ and publish it.
 
 When a release is published, it'll trigger [release](.github/workflows/release.yml) workflow which creates PyPI
  release and deploys updated documentation.
