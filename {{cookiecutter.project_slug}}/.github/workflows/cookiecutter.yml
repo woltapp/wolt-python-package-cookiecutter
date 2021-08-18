@@ -4,7 +4,7 @@ on:
     - cron: "0 0 * * *"  # at the end of every day
 {% raw %}
 jobs:
-  autoUpdateProject:
+  auto-update-project:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
