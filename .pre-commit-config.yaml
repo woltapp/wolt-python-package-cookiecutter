@@ -6,4 +6,3 @@ repos:
       - id: trailing-whitespace
       - id: mixed-line-ending
       - id: trailing-whitespace
-      - id: check-yaml
