@@ -8,16 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
-      - name: Install dependencies
-        run: pip install poetry
-
-      - name: Setup project
-        run: poetry install
+      - uses: ./.github/actions/python-poetry-env
 
       - name: Gather outdated dependencies
         id: get_outdated_dependencies
