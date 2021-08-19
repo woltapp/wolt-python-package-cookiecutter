@@ -1,5 +1,6 @@
 name: 'Setup Python + Poetry environment'
 description: 'Setup Python + Poetry environment'
+{% raw %}
 inputs:
   python-version:
     required: false
@@ -17,4 +18,4 @@ runs:
       shell: bash
     - name: Create virtual environment
       run: poetry install
-      shell: bash
+      shell: bash{% endraw %}
