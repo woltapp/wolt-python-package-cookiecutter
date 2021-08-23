@@ -34,7 +34,6 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           add: 'CHANGELOG.md pyproject.toml'
-          branch: 'master'
           message: 'Release ${{ steps.updated_version.outputs.version }}'
       - name: Create tag
         run: |
