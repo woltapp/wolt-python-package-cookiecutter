@@ -70,5 +70,5 @@ jobs:
             chore: update project structure to ${{ steps.get_versions.outputs.next_version }}
           title: "[Actions] Auto-Update cookiecutter template"
           body: ${{ steps.get_changelog.outputs.changelog }}
-          branch: chore/cookiecutter-pypackage # TODO auto-update-project-from-template
+          branch: chore/auto-update-project-from-template
           delete-branch: true{% endraw %}
