@@ -6,7 +6,7 @@ inputs:
     required: false
     description: 'Python version'
     default: '3.9'
-outputs:
+outputs: {}
 runs:
   using: 'composite'
   steps:
