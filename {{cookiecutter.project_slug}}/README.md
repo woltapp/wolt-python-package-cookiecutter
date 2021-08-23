@@ -26,6 +26,9 @@ pip install {{ cookiecutter.project_slug }}
 
 ## Development
 * Clone this repository
+* Requirements:
+    * [Poetry](https://adamj.eu/tech/2021/06/09/python-type-hints-how-to-narrow-types-with-typeguard/)
+    * Python 3.7+
 * Create a virtual environment and install the dependencies
 
 ```sh
