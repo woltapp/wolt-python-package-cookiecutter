@@ -2,6 +2,7 @@
 ![PyPI](https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}?style=flat-square)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_slug}}?style=flat-square)
 ![PyPI - License](https://img.shields.io/pypi/l/{{ cookiecutter.project_slug }}?style=flat-square)
+![Coookiecutter - Wolt](https://img.shields.io/badge/cookiecutter-Wolt-00c2e8?style=flat-square&logo=cookiecutter&logoColor=D4AA00&link=https://github.com/woltapp/wolt-python-package-cookiecutter)
 ---
 
 **Documentation**: [https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug
@@ -82,3 +83,6 @@ Or if you want e.g. want to run all checks manually for all files:
 ```sh
 pre-commit run --all-files
 ```
+
+---
+This project was generated using the [wolt-python-package-cookiecutter](https://github.com/woltapp/wolt-python-package-cookiecutter) template.
