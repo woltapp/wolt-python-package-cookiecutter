@@ -5,33 +5,39 @@ and whistles included.
 
 ![Demo](https://github.com/woltapp/wolt-python-package-cookiecutter/raw/master/demo.gif)
 
-## Features:
+## Features
 
-**Automatic updates to the projects generated from this cookiecutter**
+#### Automatic updates to the projects generated from this cookiecutter
+
 * Powered by [cruft](https://cruft.github.io/cruft/)
 * Keep your project up-to-date with best practices
 
-**Continuous integration**
+#### Continuous integration
+
 * Powered by [Github Actions](https://github.com/features/actions)
 * Testing against multiple different versions
 
-**Documentation**
+#### Documentation
+
 * Automatically published as [GitHub Pages](https://pages.github.com/)
 * Powered by [mkdocs-material](https://github.com/squidfunk/mkdocs-material)
 * Auto-generated API documentation from docstrings via [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings)
 * See the extensive list of [MkDocs plugins](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins) which can help you
  to tune the documentation to fit your project's needs
 
-**Automated releases**
+#### Automated releases
+
 * Publishing to [PyPI](https://pypi.org/) when a release is made in GitHub
 
-**Changelog management**
+#### Changelog management
+
 * Gently enforced: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 * GitHub releases get their description automatically populated based on the changelog content
 * The _Unreleased_ section is automatically updated when a release is done
 * Changelog is embedded in the documentation
 
-**Bells and whistles**
+#### Bells and whistles
+
 * [Poetry](https://python-poetry.org/docs/) for managing dependencies and packaging
 * [pre-commit](https://pre-commit.com/) for running all the goodies listed below
 * [mypy](https://flake8.pycqa.org/en/latest/) for static type checking
@@ -40,7 +46,8 @@ and whistles included.
 * [isort](https://pycqa.github.io/isort/) for auto-sorting imports
 * [autoflake](https://github.com/myint/autoflake) for auto-removing unused imports
 
-**Automation**
+#### Automation
+
 * Updates to the best practices (via GHA workflow which runs `cruft update` and creates a PR)
 * Dependency updates (via GHA workflow which creates a PR)
 
@@ -76,13 +83,13 @@ cruft update
 ```
 
 ### Configure secrets
-`PYPI_TOKEN`
+
+#### `PYPI_TOKEN`
 
 Required for publishing the package to [PyPI](https://pypi.org/). You can generate a token by logging into PyPI and
  navigating to _Add API token_ in your [account settings](https://pypi.org/manage/account/).
 
-
-`AUTO_UPDATE_GITHUB_TOKEN`
+#### `AUTO_UPDATE_GITHUB_TOKEN`
 
 This cookiecutter template comes with an auto update feature if the project was created using cruft.
 A GitHub action automatically checks for updates and creates a pull request.
@@ -94,7 +101,7 @@ and use it as the value for `AUTO_UPDATE_GITHUB_TOKEN` secret. When creating the
 * repo
 * workflow
 
-
 ### After the first release
+
 The first release will create `gh-pages` branch which will contain the static files for the documentation. Enable GitHub
  Pages in the _Pages_ section of the repository settings.
