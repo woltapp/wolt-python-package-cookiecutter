@@ -3,6 +3,8 @@
 Cookiecutter for rapidly developing new open source Python packages. Best practices with all the modern bells
 and whistles included.
 
+![Demo](https://github.com/woltapp/wolt-python-package-cookiecutter/raw/master/demo.gif)
+
 ## Features:
 
 **Automatic updates to the projects generated from this cookiecutter**
