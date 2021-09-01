@@ -52,6 +52,7 @@ pymdown-extensions = "*"
 pytest = "*"
 pytest-cov = "*"
 python-kacl = "*"
+tryceratops = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
