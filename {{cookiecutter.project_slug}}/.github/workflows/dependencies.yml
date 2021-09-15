@@ -43,7 +43,7 @@ jobs:
       # behaviour if PR already exists: https://github.com/marketplace/actions/create-pull-request#action-behaviour
       - name: Create Pull Request
         env:
-          GITHUB_TOKEN: ${{ secrets.AUTO_UPDATE_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: ${{ steps.check_for_outdated_dependencies.outputs.body != 0 && env.GITHUB_TOKEN != 0 }}
         uses: peter-evans/create-pull-request@v3
         with:
