@@ -12,7 +12,7 @@ jobs:
       - uses: ./.github/actions/python-poetry-env
 
       - name: Install tabulate
-        run: pip install tabulate
+        run: python -m pip install tabulate
 
       - name: Gather outdated dependencies
         id: check_for_outdated_dependencies
