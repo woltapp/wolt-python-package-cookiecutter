@@ -52,7 +52,7 @@ jobs:
           export TEMPLATE=$(cat .cruft.json | jello -r "_['template']")
           git clone $TEMPLATE /tmp/template
           cd /tmp/template
-          body=$((echo "Date;Change;Hash"; git log --pretty=format:"%as;%s;%h" HEAD~3..HEAD) | tabulate --header --format github -s ';' -)
+          body=$((echo "Date;Change;Hash"; git log --pretty=format:"%as;%s;%h" ${{ steps.get_versions.outputs.current_version }}..${{ steps.get_versions.outputs.next_version }}) | tabulate --header --format github -s ';' -)
           body=$(cat <<EOF
           Changes from $TEMPLATE
 
