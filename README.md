@@ -5,6 +5,9 @@ and whistles included.
 
 ![Demo](https://github.com/woltapp/wolt-python-package-cookiecutter/raw/master/demo.gif)
 
+## Example projects which use Wolt Python Package Cookiecutter
+* [jerry-git/pytest-split](https://github.com/jerry-git/pytest-split)
+
 ## Features
 
 #### Automatic updates to the projects generated from this cookiecutter
