@@ -8,15 +8,11 @@
 
 ---
 
-**Documentation**: [https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug
- }}](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug
- }})
+**Documentation**: [https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug}}](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug}})
 
-**Source Code**: [https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}](https
-://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }})
+**Source Code**: [https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }})
 
-**PyPI**: [https://pypi.org/project/{{ cookiecutter.project_slug }}/](https://pypi.org/project/{{ cookiecutter
-.project_slug }}/)
+**PyPI**: [https://pypi.org/project/{{ cookiecutter.project_slug }}/](https://pypi.org/project/{{ cookiecutter.project_slug }}/)
 
 ---
 
@@ -65,7 +61,7 @@ Trigger the [Draft release workflow](https://github.com/{{ cookiecutter.github_u
 
 Find the draft release from the
 [GitHub releases](https://github.com/{{ cookiecutter.github_username}}/{{ cookiecutter.project_slug }}/releases) and publish it. When
- a release is published, it'll trigger [release](.github/workflows/release.yml) workflow which creates PyPI
+ a release is published, it'll trigger [release](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/blob/master/.github/workflows/release.yml) workflow which creates PyPI
  release and deploys updated documentation.
 
 ### Pre-commit
