@@ -16,12 +16,14 @@ jobs:
       - uses: ./.github/actions/python-poetry-env
       - name: Update version
         id: updated_version
+        shell: bash
         run: |
           poetry version ${{ github.event.inputs.version }}
           version=$(poetry version --short)
           echo ::set-output name=version::$version
       - name: Update changelog
         id: changelog
+        shell: bash
         run: |
           poetry run kacl-cli release ${{ steps.updated_version.outputs.version }} --modify --auto-link
           echo "" >> CHANGELOG.md

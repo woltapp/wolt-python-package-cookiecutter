@@ -23,6 +23,7 @@ jobs:
       - name: Format PR message
         if: ${{ steps.check_for_outdated_dependencies.outputs.body != 0 }}
         id: get_outdated_dependencies
+        shell: bash
         run: |
           body=$(poetry show -o -n | sed 's/(!)//' | awk 'BEGIN {print "Package","Used","Update"}; {print $1,$2,$3}' | tabulate --header --format github -)
           body=$(cat <<EOF
