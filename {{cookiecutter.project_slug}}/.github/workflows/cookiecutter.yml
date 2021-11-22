@@ -35,6 +35,7 @@ jobs:
       - name: Get template versions
         id: get_versions
         if: steps.changes.outputs.changed == 1
+        shell: bash
         run: |
           echo ::set-output name=current_version::$(git show HEAD:.cruft.json | jello -r "_['commit'][:8]")
           echo ::set-output name=next_version::$(cat .cruft.json | jello -r "_['commit'][:8]")
@@ -42,6 +43,7 @@ jobs:
       - name: Get changelog
         id: get_changelog
         if: steps.changes.outputs.changed == 1
+        shell: bash
         run: |
           export TEMPLATE=$(cat .cruft.json | jello -r "_['template']")
           git clone $TEMPLATE /tmp/template
