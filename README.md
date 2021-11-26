@@ -1,7 +1,6 @@
 # Wolt Python Package Cookiecutter
 
-Cookiecutter for rapidly developing new open source Python packages. Best practices with all the modern bells
-and whistles included.
+A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (project template) for rapidly developing new open source Python packages. Best practices with all the modern bells and whistles included.
 
 ![Demo](https://github.com/woltapp/wolt-python-package-cookiecutter/raw/master/demo.gif)
 
