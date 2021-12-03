@@ -47,6 +47,7 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (pro
 * [black](https://black.readthedocs.io/en/stable/) for auto-formatting the code
 * [isort](https://pycqa.github.io/isort/) for auto-sorting imports
 * [autoflake](https://github.com/myint/autoflake) for auto-removing unused imports
+* [eradicate](https://pypi.org/project/eradicate/) for auto-removing commented code
 
 #### Automation
 

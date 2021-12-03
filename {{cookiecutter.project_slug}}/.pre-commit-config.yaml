@@ -20,6 +20,11 @@ repos:
         entry: poetry run autoflake -r -i --remove-all-unused-imports --remove-unused-variables
         language: system
         types: [ python ]
+      - id: eradicate
+        name: eradicate
+        entry: poetry run eradicate --in-place
+        language: system
+        types: [ python ]
       - id: isort
         name: isort
         entry: poetry run isort
