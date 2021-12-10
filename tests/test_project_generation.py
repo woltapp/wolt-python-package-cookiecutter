@@ -1,18 +1,16 @@
+import yaml
 from pathlib import Path
 
 from cookiecutter.main import cookiecutter
 
 TEMPLATE_DIR = str(Path(__file__).parent.parent)
+CONTEXT_FILE = Path(__file__).parent / "context.yaml"
 
-PROJECT_NAME = "example-project"
+with open(CONTEXT_FILE) as file_handler:
+    content = yaml.safe_load(file_handler)
 
-EXAMPLE_CONTEXT = {
-    "author_name": "John Doe",
-    "author_email": "john.doe@mail.com",
-    "github_username": "johndoe",
-    "project_name": PROJECT_NAME,
-    "project_short_description": "A short description of the project",
-}
+EXAMPLE_CONTEXT = content['default_context']
+PROJECT_NAME = EXAMPLE_CONTEXT["project_name"]
 
 
 def test_generate_new_project(tmp_path):

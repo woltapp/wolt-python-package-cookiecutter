@@ -33,5 +33,30 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.9
-      - run: python -m pip install cookiecutter pytest
+      - run: python -m pip install cookiecutter pytest pyyaml
       - run: pytest
+
+  lint-workflows:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - run: python -m pip install cookiecutter
+      - run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+      - name: Generate project
+        run: |
+          cookiecutter --config-file tests/context.yaml --no-input .
+          cd example-project/
+          # actionlint needs a git repo in place
+          git init
+          git config user.email "gha@users.noreply.github.com"
+          git config user.name "gha"
+          git add .
+          git commit -m "initial commit"
+      - name: Lint workflows
+        run: |
+          cd example-project
+          ../actionlint -color
