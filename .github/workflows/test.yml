@@ -36,7 +36,7 @@ jobs:
       - run: python -m pip install cookiecutter pytest pyyaml
       - run: pytest
 
-  lint-workflows:
+  lint-generated-project:
     runs-on: ubuntu-latest
 
     steps:
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.9
-      - run: python -m pip install cookiecutter
+      - run: python -m pip install cookiecutter poetry
       - run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
       - name: Generate project
         run: |
@@ -60,3 +60,8 @@ jobs:
         run: |
           cd example-project
           ../actionlint -color
+      - name: Lint project
+        run: |
+          cd example-project
+          poetry install
+          poetry run pre-commit run -a
