@@ -47,6 +47,10 @@ repos:
         entry: poetry run flake8
         language: system
         types: [python]
+      - id: mdformat
+        name: mdformat
+        entry: mdformat
+        types: [markdown]
       - id: kacl-verify
         name: kacl-verify
         entry: poetry run kacl-cli verify
