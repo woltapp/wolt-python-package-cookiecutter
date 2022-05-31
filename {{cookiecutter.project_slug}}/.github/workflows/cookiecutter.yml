@@ -26,7 +26,7 @@ jobs:
         run: echo "::set-output name=changed::$(git status --porcelain | wc -l)"
 
       - name: apply additional changes and fixes
-        if: steps.changes.outputs.changed == 1
+        if: steps.changes.outputs.changed > 0
         run: |
           poetry lock --no-update  # add new dependencies
           poetry install
@@ -34,7 +34,7 @@ jobs:
 
       - name: Get template versions
         id: get_versions
-        if: steps.changes.outputs.changed == 1
+        if: steps.changes.outputs.changed > 0
         shell: bash
         run: |
           CURRENT_VERSION=$(git show HEAD:.cruft.json | jello -r "_['commit'][:8]")
@@ -44,7 +44,7 @@ jobs:
 
       - name: Get changelog
         id: get_changelog
-        if: steps.changes.outputs.changed == 1
+        if: steps.changes.outputs.changed > 0
         shell: bash
         run: |
           TEMPLATE=$(jello -r "_['template']" < .cruft.json)
