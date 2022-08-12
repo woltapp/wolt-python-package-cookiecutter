@@ -69,12 +69,13 @@ target-version = ["py37", "py38", "py39"]
 include = '\.pyi?$'
 
 [tool.pytest.ini_options]
-addopts = """\
-    --cov {{ cookiecutter.package_name }} \
-    --cov tests \
-    --cov-report term-missing \
-    --no-cov-on-fail \
-"""
+addopts = [
+    '--import-mode=importlib',  # allow using test files with same name
+    '--cov={{ cookiecutter.package_name }}',
+    '--cov=tests',
+    '--cov-report=term-missing',
+    '--no-cov-on-fail',
+]
 
 [tool.coverage.report]
 fail_under = 100
