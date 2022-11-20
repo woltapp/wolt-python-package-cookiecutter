@@ -31,5 +31,6 @@ plugins:
           rendering:
             show_signature_annotations: true
             show_source: true
+            show_submodules: true
       watch:
         - src/{{ cookiecutter.package_name }}
