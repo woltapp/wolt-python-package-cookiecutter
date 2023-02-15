@@ -18,9 +18,9 @@ classifiers = [
   "Operating System :: OS Independent",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.7",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
+  {%- for version in cookiecutter._python_version_specs[cookiecutter.python_version]['versions'] %}
+  "Programming Language :: Python :: {{ version }}",
+  {%- endfor %}
   "Topic :: Software Development :: Libraries :: Python Modules",
   "Typing :: Typed",
 ]
@@ -30,7 +30,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.7.1, <4.0"
+python = ">={{ cookiecutter._python_version_specs[cookiecutter.python_version]['versions'][0] }}, <4.0"
 
 [tool.poetry.dev-dependencies]
 autoflake = "*"
@@ -65,7 +65,7 @@ profile = "black"
 src_paths = ["src", "tests"]
 
 [tool.black]
-target-version = ["py37", "py38", "py39"]
+target-version = {{ cookiecutter._python_version_specs[cookiecutter.python_version]['black_taget_versions'] }}
 include = '\.pyi?$'
 
 [tool.pytest.ini_options]
