@@ -5,5 +5,28 @@
     "project_name": "Name of the project (will be shown e.g. as the title in the readme)",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
-    "project_short_description": "A short description of the project"
+    "project_short_description": "A short description of the project",
+    "python_version": ["3.7+", "3.8+", "3.9+", "3.10+", "3.11+"],
+    "_python_version_specs": {
+        "3.7+": {
+            "versions": ["3.7", "3.8", "3.9", "3.10", "3.11"],
+            "black_taget_versions": ["py37", "py38", "py39", "py310", "py311"]
+        },
+        "3.8+": {
+            "versions": ["3.8", "3.9", "3.10", "3.11"],
+            "black_taget_versions": ["py38", "py39", "py310", "py311"]
+        },
+        "3.9+": {
+            "versions": ["3.9", "3.10", "3.11"],
+            "black_taget_versions": ["py39", "py310", "py311"]
+        },
+        "3.10+": {
+            "versions": ["3.10", "3.11"],
+            "black_taget_versions": ["py310", "py311"]
+        },
+        "3.11+": {
+            "versions": ["3.11"],
+            "black_taget_versions": ["py311"]
+        }
+    }
 }
