@@ -46,7 +46,6 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (pro
 * [ruff](https://beta.ruff.rs/) (with multiple plugins enabled) for linting (e.g. style and complexity checks, commented code, etc.)
   and auto-sorting imports
 * [black](https://black.readthedocs.io/en/stable/) for auto-formatting the code
-* [autoflake](https://github.com/myint/autoflake) for auto-removing unused imports
 
 #### Automation
 
