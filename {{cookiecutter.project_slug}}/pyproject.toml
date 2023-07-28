@@ -32,7 +32,8 @@ packages = [
 [tool.poetry.dependencies]
 python = ">=3.7.1, <4.0"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
+autoflake = "*"
 black = "*"
 mkdocstrings = {version = ">=0.18", extras = ["python"]}
 mkdocs-material = "*"
