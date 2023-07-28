@@ -42,10 +42,10 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (pro
 
 * [Poetry](https://python-poetry.org/docs/) for managing dependencies and packaging
 * [pre-commit](https://pre-commit.com/) for running all the goodies listed below
-* [mypy](https://flake8.pycqa.org/en/latest/) for static type checking
-* [flake8](https://flake8.pycqa.org/en/latest/) (with multiple plugins) for linting (e.g. style and complexity checks, commented code, etc.)
+* [mypy](https://mypy.readthedocs.io/en/stable/) for static type checking
+* [ruff](https://beta.ruff.rs/) (with multiple plugins enabled) for linting (e.g. style and complexity checks, commented code, etc.)
+  and auto-sorting imports
 * [black](https://black.readthedocs.io/en/stable/) for auto-formatting the code
-* [isort](https://pycqa.github.io/isort/) for auto-sorting imports
 * [autoflake](https://github.com/myint/autoflake) for auto-removing unused imports
 
 #### Automation
