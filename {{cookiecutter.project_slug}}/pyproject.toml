@@ -44,7 +44,6 @@ pytest = "*"
 pytest-github-actions-annotate-failures = "*"
 pytest-cov = "*"
 python-kacl = "*"
-pyupgrade = "*"
 tryceratops = "*"
 ruff = "*"
 
@@ -94,6 +93,7 @@ select = [
     "W", # pycodestyle warning
     "F", # pyflakes
     "N", # pep8-naming
+    "UP", # pyupgrade
 ]
 
 [tool.ruff.pep8-naming]
