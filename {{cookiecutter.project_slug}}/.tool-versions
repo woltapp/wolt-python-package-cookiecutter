@@ -1,0 +1,4 @@
+# this if config file for https://asdf-vm.com/
+# which can be used to install hundreds of tools at specific version
+poetry 1.7.1
+
