@@ -16,4 +16,3 @@ deps: .make-dev-deps
 .make-dev-deps: poetry.lock
 	poetry install --with docs --sync
 	touch $@
-
