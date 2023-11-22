@@ -50,12 +50,6 @@ fmt: ## Apply all automated formatters
 .PHONY: release
 release: ## Create new release
 
-.PHONY: local-run
-local-run: ## Run system locally without docker
-
-.PHONY: docker-run
-docker-run: ## Run system locally with docker
-
 .PHONY: test
 test: ## Run automated tests
 
