@@ -14,5 +14,5 @@ deps: .make-dev-deps
 # eg. test can depend on this. Strictly speaking this depends on 'pyproject.toml' too, but often those changes
 # are not relevant to dependencies and user can always do `make -B <rule> to force rebuild`
 .make-dev-deps: poetry.lock
-	poetry install --with docs --sync
+	poetry install --sync
 	touch $@
