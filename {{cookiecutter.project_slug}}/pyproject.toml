@@ -35,7 +35,7 @@ packages = [
 python = ">=3.8.1, <4.0"
 
 [tool.poetry.dev-dependencies]
-mkdocstrings = {version = ">=0.18", extras = ["python"]}
+mkdocstrings = {version = ">=0.23", extras = ["python"]}
 mkdocs-material = "*"
 mypy = "*"
 pre-commit = "*"
@@ -97,12 +97,23 @@ exclude_lines = [
 ]
 
 [tool.mypy]
+# This is the global mypy configuration.
+# Avoid changing this!
+strict = true  # See all the enabled flags `mypy --help | grep -A 10 'Strict mode'`
 disallow_any_unimported = true
-disallow_untyped_defs = true
-no_implicit_optional = true
-strict_equality = true
-warn_unused_ignores = true
-warn_redundant_casts = true
-warn_return_any = true
-check_untyped_defs = true
-show_error_codes = true
+
+# If you need to ignore something for some specific module,
+# add overrides for them. Avoid changing the global config!
+# For example:
+# [[tool.mypy.overrides]]
+# module = [
+#  "my_unpyted_dependency1.*",
+#  "my_unpyted_dependency2.*"
+# ]
+# ignore_missing_imports = true
+
+# [[tool.mypy.overrides]]
+# module = [
+#   "tests/my_thing/test_my_thing",
+# ]
+# disallow_untyped_defs = false
