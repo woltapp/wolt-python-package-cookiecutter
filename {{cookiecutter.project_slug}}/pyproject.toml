@@ -35,40 +35,51 @@ packages = [
 python = ">=3.8.1, <4.0"
 
 [tool.poetry.dev-dependencies]
-autoflake = "*"
-black = "*"
-flake8 = "*"
-flake8-bugbear = "*"
-flake8-builtins = "*"
-flake8-comprehensions = "*"
-flake8-debugger = "*"
-flake8-eradicate = "*"
-flake8-logging-format = "*"
-isort = "*"
 mkdocstrings = {version = ">=0.23", extras = ["python"]}
 mkdocs-material = "*"
 mypy = "*"
-pep8-naming = "*"
 pre-commit = "*"
 pymdown-extensions = "*"
 pytest = "*"
 pytest-github-actions-annotate-failures = "*"
 pytest-cov = "*"
 python-kacl = "*"
-pyupgrade = "*"
-tryceratops = "*"
+ruff = ">=0.2.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.isort]
-profile = "black"
-src_paths = ["src", "tests"]
+[tool.ruff]
+target-version = "py38" # The lowest supported version
 
-[tool.black]
-target-version = ["py38", "py39", "py310", "py311", "py312"]
-include = '\.pyi?$'
+[tool.ruff.lint]
+# By default, enable all the lint rules.
+# Add to the ignore list below if you don't want some rules.
+# If you need some ignores for certain modules, see tool.ruff.lint.per-file-ignores below.
+# For individual ignore cases, prefer inline `# noqa`s within the code.
+select = ["ALL"]
+ignore = [
+    "ANN",      # Type hints related, let mypy handle these.
+    "D",        # Docstrings related, way too strict to our taste
+    ]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = [
+    "S101",     # "Use of `assert` detected"
+    "ARG",      # "Unused function argument". Fixtures are often unused.
+    "S105",     # "Possible hardcoded password".
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pep8-naming]
+classmethod-decorators = [
+    "classmethod",
+    "pydantic.validator",
+    "pydantic.root_validator",
+]
 
 [tool.pytest.ini_options]
 addopts = """\
