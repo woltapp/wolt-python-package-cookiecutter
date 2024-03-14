@@ -44,4 +44,11 @@ jobs:
       - uses: ./.github/actions/python-poetry-env
         with:
           python-version: ${{ matrix.python-version }}
-      - run: poetry run pytest{% endraw %}
+      - run: poetry run pytest
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/python-poetry-env
+      - run: poetry run mkdocs build{% endraw %}

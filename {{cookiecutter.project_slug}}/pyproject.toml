@@ -45,7 +45,7 @@ flake8-debugger = "*"
 flake8-eradicate = "*"
 flake8-logging-format = "*"
 isort = "*"
-mkdocstrings = {version = ">=0.18", extras = ["python"]}
+mkdocstrings = {version = ">=0.23", extras = ["python"]}
 mkdocs-material = "*"
 mypy = "*"
 pep8-naming = "*"
